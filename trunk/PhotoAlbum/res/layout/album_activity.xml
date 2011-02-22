@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2011 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+        
+<com.example.android.photoalbum.DeckLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:p="http://schemas.android.com/apk/res/com.example.android.photoalbum"
+
+    android:id="@+id/deck"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Card #1, Map -->
+    <com.google.android.maps.MapView
+        android:id="@+id/photo_location"
+
+        android:layout_width="426dip"
+        android:layout_height="match_parent"
+        
+        android:layout_gravity="right"
+
+        android:clickable="true"
+        android:visibility="invisible"
+
+        android:apiKey="INSERT_YOUR_MAPS_KEY_HERE" />
+
+    <!-- Card #2, Info about the current photo -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        
+        android:background="#ff1a1a1a"
+        android:visibility="invisible">
+
+        <include
+            layout="@layout/photo_info"
+            android:id="@+id/photo_info"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="bottom|right"
+
+            android:layout_marginRight="50dip"
+            android:layout_marginBottom="40dip" />
+
+    </FrameLayout>
+
+    <!-- Card #3, Album and photo -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Displays the photos -->
+        <FrameLayout
+            android:id="@+id/stack"
+    
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Left panel containing the list of photos -->
+        <FrameLayout
+            android:id="@+id/panel"
+
+            android:layout_width="358dip"
+            android:layout_height="match_parent"
+
+            android:background="@drawable/panel_background">
+
+            <!-- Name of the album -->
+            <com.example.android.photoalbum.VerticalLabelView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+    
+                android:layout_gravity="bottom|left"
+    
+                android:layout_marginLeft="17dip"
+                android:layout_marginBottom="18dip"
+                
+                p:text="@string/album_name"
+                p:textColor="#4dffffff"
+                p:textSize="34dip" />
+
+            <!-- List of photos -->
+            <ListView
+                android:id="@+id/album_list"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:fadingEdge="none"
+                android:divider="@null"
+                android:listSelector="@android:color/transparent" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</com.example.android.photoalbum.DeckLayout>

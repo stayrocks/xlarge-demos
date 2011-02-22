@@ -1,0 +1,10 @@
+IMPORTANT
+
+Before you compile and run this sample app, you must open the file
+res/layout/album_activity.xml and insert your Google Maps API key
+in the line android:apiKey.
+
+Information on how to obtain a Google Maps API key can be found
+at the following address:
+
+http://code.google.com/android/add-ons/google-apis/mapkey.html
