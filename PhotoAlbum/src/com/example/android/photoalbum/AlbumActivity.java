@@ -29,7 +29,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.LruCache;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
