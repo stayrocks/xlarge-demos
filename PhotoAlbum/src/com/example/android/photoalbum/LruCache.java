@@ -101,7 +101,6 @@ public class LruCache<K, V> {
 
         missCount++;
 
-        // TODO: release the lock while calling this potentially slow user code
         result = create(key);
 
         if (result != null) {
@@ -137,7 +136,7 @@ public class LruCache<K, V> {
 
     private void trimToSize(int maxSize) {
         while (size > maxSize) {
-            Map.Entry<K, V> toEvict = map.eldest(); // equal to map.entrySet().iterator().next();
+            Map.Entry<K, V> toEvict = map.entrySet().iterator().next();
             if (toEvict == null) {
                 break; // map is empty; if size is not 0 then throw an error below
             }
@@ -148,7 +147,6 @@ public class LruCache<K, V> {
             size -= safeSizeOf(key, value);
             evictionCount++;
 
-            // TODO: release the lock while calling this potentially slow user code
             entryEvicted(key, value);
         }
 

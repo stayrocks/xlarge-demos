@@ -45,8 +45,6 @@ import java.util.List;
 
 @SuppressWarnings({"UnusedDeclaration"})
 public class AlbumActivity extends MapActivity {
-    private static final int LIST_TOP_PADDING = 13;
-
     private ViewGroup mStack;
     private List<Photo> mPhotos;
 
